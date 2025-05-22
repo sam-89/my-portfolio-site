@@ -1,6 +1,5 @@
 
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { Navigation } from '../components/Navigation';
 import { ThemeToggle } from '../components/ThemeToggle';
@@ -25,11 +24,7 @@ const Index = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 dark:from-slate-950 dark:via-blue-950 dark:to-slate-950 text-white overflow-x-hidden">
         {/* Fixed Background Animation */}
         <div className="fixed inset-0 z-0">
-          <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-            <Suspense fallback={null}>
-              <BackgroundAnimation />
-            </Suspense>
-          </Canvas>
+          <BackgroundAnimation />
         </div>
 
         {/* Theme Toggle */}
