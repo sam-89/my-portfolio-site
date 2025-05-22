@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Code, Database, Cloud, Brain, Laptop, Settings } from 'lucide-react';
 
@@ -84,60 +83,6 @@ export const Skills = () => {
         }
       ],
       color: "from-blue-400 to-cyan-400"
-    },
-        {
-          name: "Python",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-        },
-        {
-          name: "JavaScript",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-        },
-        {
-          name: "TypeScript",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-        },
-        {
-          name: "HTML5/CSS3",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-        },
-        {
-          name: "SQL",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-        }
-      ],
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "AI/ML Libraries",
-      icon: Brain,
-      skills: [
-        {
-          name: "TensorFlow",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-        },
-        {
-          name: "PyTorch",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
-        },
-        {
-          name: "scikit-learn",
-          icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-        },
-        {
-          name: "pandas",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
-        },
-        {
-          name: "NumPy",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-        },
-        {
-          name: "OpenCV",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
-        }
-      ],
-      color: "from-purple-500 to-pink-500"
     },
     {
       title: "Frontend",
