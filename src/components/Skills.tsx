@@ -7,7 +7,28 @@ export const Skills = () => {
     {
       title: "Languages & Frameworks",
       icon: Code,
-      skills: ["Python", "JavaScript", "TypeScript", "HTML/CSS", "SQL"],
+      skills: [
+        {
+          name: "Python",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          name: "JavaScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        },
+        {
+          name: "TypeScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        },
+        {
+          name: "HTML5/CSS3",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+        },
+        {
+          name: "SQL",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+        }
+      ],
       color: "from-blue-500 to-cyan-500"
     },
     {
@@ -88,8 +109,21 @@ export const Skills = () => {
                     viewport={{ once: true }}
                     className="flex items-center space-x-3"
                   >
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`} />
-                    <span className="text-gray-300">{skill}</span>
+                    {typeof skill === 'string' ? (
+                      <>
+                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`} />
+                        <span className="text-gray-300">{skill}</span>
+                      </>
+                    ) : (
+                      <>
+                        <img 
+                          src={skill.icon} 
+                          alt={skill.name} 
+                          className="w-6 h-6 object-contain"
+                        />
+                        <span className="text-gray-300">{skill.name}</span>
+                      </>
+                    )}
                   </motion.div>
                 ))}
               </div>
