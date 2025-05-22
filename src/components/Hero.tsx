@@ -12,7 +12,7 @@ export const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative">
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,15 +25,27 @@ export const Hero = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-5xl lg:text-7xl font-bold leading-tight"
           >
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
+            <motion.span 
+              className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent"
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.3 } 
+              }}
+            >
               AI Engineer
-            </span>
+            </motion.span>
             <br />
             <span className="text-white">by Mind</span>
             <br />
-            <span className="bg-gradient-to-r from-purple-400 via-pink-300 to-blue-400 bg-clip-text text-transparent">
+            <motion.span 
+              className="bg-gradient-to-r from-purple-400 via-pink-300 to-blue-400 bg-clip-text text-transparent"
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.3 } 
+              }}
+            >
               Technologist
-            </span>
+            </motion.span>
             <br />
             <span className="text-white">by Passion</span>
           </motion.h1>
@@ -54,7 +66,7 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
           >
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 rounded-lg font-semibold text-white shadow-lg shadow-blue-500/25 flex items-center space-x-2"
@@ -64,7 +76,11 @@ export const Hero = () => {
             </motion.button>
 
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.05, 
+                backgroundColor: "rgba(168, 85, 247, 0.1)",
+                borderColor: "rgb(168, 85, 247)" 
+              }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-semibold text-white flex items-center space-x-2"
             >
@@ -72,22 +88,31 @@ export const Hero = () => {
               <Download size={20} />
             </motion.button>
           </motion.div>
-        </motion.div>
-
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors"
-        >
+          
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
+            className="absolute bottom-10 left-0 right-0 flex justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
           >
-            <ChevronDown size={32} />
+            <motion.div
+              animate={{ 
+                y: [0, 10, 0],
+                opacity: [0.4, 1, 0.4]
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 2.5,
+                ease: "easeInOut"
+              }}
+              className="flex flex-col items-center space-y-2"
+              onClick={scrollToAbout}
+            >
+              <span className="text-sm text-gray-400 font-light">Scroll Down</span>
+              <ChevronDown size={24} className="text-gray-400" />
+            </motion.div>
           </motion.div>
-        </motion.button>
+        </motion.div>
       </div>
     </section>
   );
