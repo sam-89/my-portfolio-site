@@ -76,16 +76,20 @@ export const Navigation = () => {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  x: 5,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
                 whileTap={{ scale: 0.95 }}
-                className={`flex items-center space-x-2 transition-colors ${
+                className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-all duration-300 ${
                   activeSection === item.href.substring(1) 
-                    ? 'text-blue-400' 
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-blue-400 bg-blue-500/10 font-medium' 
+                    : 'text-gray-300 hover:text-white hover:bg-slate-800/50'
                 }`}
               >
-                <item.icon size={16} />
-                <span>{item.name}</span>
+                <item.icon size={18} className="transition-transform duration-300 group-hover:rotate-12" />
+                <span className="font-medium tracking-wide">{item.name}</span>
               </motion.button>
             ))}
           </div>
@@ -112,15 +116,20 @@ export const Navigation = () => {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                whileHover={{ scale: 1.05 }}
-                className={`flex items-center space-x-3 w-full text-left py-3 transition-colors ${
+                whileHover={{ 
+                  scale: 1.02,
+                  x: 5,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
+                whileTap={{ scale: 0.98 }}
+                className={`flex items-center space-x-3 w-full text-left py-3 px-4 rounded-lg transition-all duration-300 ${
                   activeSection === item.href.substring(1) 
-                    ? 'text-blue-400' 
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-blue-400 bg-blue-500/10 font-medium' 
+                    : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
                 }`}
               >
-                <item.icon size={20} />
-                <span>{item.name}</span>
+                <item.icon size={20} className="transition-transform duration-300 group-hover:rotate-12" />
+                <span className="font-medium tracking-wide">{item.name}</span>
               </motion.button>
             ))}
           </motion.div>
