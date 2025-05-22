@@ -1,13 +1,62 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { motion } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { Navigation } from '../components/Navigation';
+import { ThemeToggle } from '../components/ThemeToggle';
+import { ScrollToTop } from '../components/ScrollToTop';
+import { LoadingScreen } from '../components/LoadingScreen';
+import { Hero } from '../components/Hero';
+import { About } from '../components/About';
+import { Skills } from '../components/Skills';
+import { Projects } from '../components/Projects';
+import { Experience } from '../components/Experience';
+import { Achievements } from '../components/Achievements';
+import { Resume } from '../components/Resume';
+import { Contact } from '../components/Contact';
+import { Footer } from '../components/Footer';
+import { BackgroundAnimation } from '../components/BackgroundAnimation';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <>
+      <LoadingScreen />
+      
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 dark:from-slate-950 dark:via-blue-950 dark:to-slate-950 text-white overflow-x-hidden">
+        {/* Fixed Background Animation */}
+        <div className="fixed inset-0 z-0">
+          <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+            <Suspense fallback={null}>
+              <BackgroundAnimation />
+            </Suspense>
+          </Canvas>
+        </div>
+
+        {/* Theme Toggle */}
+        <ThemeToggle />
+        
+        {/* Scroll to Top */}
+        <ScrollToTop />
+
+        {/* Navigation */}
+        <Navigation />
+
+        {/* Main Content */}
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Achievements />
+          <Resume />
+          <Contact />
+        </main>
+
+        {/* Footer */}
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
