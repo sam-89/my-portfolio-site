@@ -5,6 +5,63 @@ import { Code, Database, Cloud, Brain, Laptop, Settings } from 'lucide-react';
 export const Skills = () => {
   const skillCategories = [
     {
+      title: "Cloud & Infrastructure",
+      icon: Cloud,
+      skills: [
+        {
+          name: "Azure Architecture",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Cloud Deployment",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+        },
+        {
+          name: "Serverless Functions",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        }
+      ],
+      color: "from-blue-400 to-cyan-400"
+    },
+    {
+      title: "Cloud Services",
+      icon: Database,
+      skills: [
+        {
+          name: "Azure AI/ML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Managed Services",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+        },
+        {
+          name: "Cloud Storage",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+        }
+      ],
+      color: "from-purple-400 to-pink-400"
+    },
+    {
+      title: "Cloud DevOps",
+      icon: Settings,
+      skills: [
+        {
+          name: "CI/CD Pipelines",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+        },
+        {
+          name: "Infrastructure as Code",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg"
+        },
+        {
+          name: "Container Orchestration",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+        }
+      ],
+      color: "from-green-400 to-emerald-400"
+    },
+    {
       title: "Languages & Frameworks",
       icon: Code,
       skills: [
