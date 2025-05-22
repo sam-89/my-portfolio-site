@@ -5,9 +5,86 @@ import { Code, Database, Cloud, Brain, Laptop, Settings } from 'lucide-react';
 export const Skills = () => {
   const skillCategories = [
     {
-      title: "Languages & Frameworks",
+      title: "Languages & Frameworks", 
       icon: Code,
       skills: [
+        {
+          name: "Python",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          name: "JavaScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        },
+        {
+          name: "TypeScript", 
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        },
+        {
+          name: "React",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          name: "Node.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+        }
+      ],
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "AI/ML Libraries",
+      icon: Brain,
+      skills: [
+        {
+          name: "TensorFlow",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+        },
+        {
+          name: "PyTorch",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+        },
+        {
+          name: "scikit-learn",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+        },
+        {
+          name: "NumPy",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+        },
+        {
+          name: "OpenCV",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+        }
+      ],
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Cloud Technologies",
+      icon: Cloud,
+      skills: [
+        {
+          name: "Azure Architecture",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Azure AI/ML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Cloud Deployment",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+        },
+        {
+          name: "Serverless Functions",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Managed Services",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+        }
+      ],
+      color: "from-blue-400 to-cyan-400"
+    },
         {
           name: "Python",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
