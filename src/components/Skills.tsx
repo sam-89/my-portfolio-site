@@ -1,10 +1,11 @@
+
 import { motion } from 'framer-motion';
 import { Code, Database, Cloud, Brain, Laptop, Settings } from 'lucide-react';
 
 export const Skills = () => {
   const skillCategories = [
     {
-      title: "Languages & Frameworks", 
+      title: "Languages & Frameworks",
       icon: Code,
       skills: [
         {
@@ -16,16 +17,16 @@ export const Skills = () => {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
         },
         {
-          name: "TypeScript", 
+          name: "TypeScript",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
         },
         {
-          name: "React",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+          name: "HTML5/CSS3",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
         },
         {
-          name: "Node.js",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+          name: "SQL",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
         }
       ],
       color: "from-blue-500 to-cyan-500"
@@ -47,6 +48,10 @@ export const Skills = () => {
           icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
         },
         {
+          name: "pandas",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+        },
+        {
           name: "NumPy",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
         },
@@ -56,33 +61,6 @@ export const Skills = () => {
         }
       ],
       color: "from-purple-500 to-pink-500"
-    },
-    {
-      title: "Cloud Technologies",
-      icon: Cloud,
-      skills: [
-        {
-          name: "Azure Architecture",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-        },
-        {
-          name: "Azure AI/ML",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-        },
-        {
-          name: "Cloud Deployment",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-        },
-        {
-          name: "Serverless Functions",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-        },
-        {
-          name: "Managed Services",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
-        }
-      ],
-      color: "from-blue-400 to-cyan-400"
     },
     {
       title: "Frontend",
@@ -144,6 +122,33 @@ export const Skills = () => {
         }
       ],
       color: "from-indigo-500 to-purple-500"
+    },
+    {
+      title: "Cloud Technologies",
+      icon: Cloud,
+      skills: [
+        {
+          name: "Azure Architecture",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Azure AI/ML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Cloud Deployment",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+        },
+        {
+          name: "Serverless Functions",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Managed Services",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+        }
+      ],
+      color: "from-blue-400 to-cyan-400"
     },
     {
       title: "AI/ML Specialties",
