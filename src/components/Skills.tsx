@@ -34,31 +34,124 @@ export const Skills = () => {
     {
       title: "AI/ML Libraries",
       icon: Brain,
-      skills: ["TensorFlow", "PyTorch", "scikit-learn", "pandas", "NumPy", "OpenCV"],
+      skills: [
+        {
+          name: "TensorFlow",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+        },
+        {
+          name: "PyTorch",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+        },
+        {
+          name: "scikit-learn",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+        },
+        {
+          name: "pandas",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+        },
+        {
+          name: "NumPy",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+        },
+        {
+          name: "OpenCV",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+        }
+      ],
       color: "from-purple-500 to-pink-500"
     },
     {
       title: "Frontend",
       icon: Laptop,
-      skills: ["React", "Next.js", "Redux"],
+      skills: [
+        {
+          name: "React",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          name: "Next.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+        },
+        {
+          name: "Redux",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
+        }
+      ],
       color: "from-green-500 to-emerald-500"
     },
     {
       title: "Backend",
       icon: Database,
-      skills: ["Django", "Node.js", "RESTful APIs"],
+      skills: [
+        {
+          name: "Django",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+        },
+        {
+          name: "Node.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+        },
+        {
+          name: "RESTful APIs",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+        }
+      ],
       color: "from-orange-500 to-red-500"
     },
     {
       title: "Cloud & DevOps",
       icon: Cloud,
-      skills: ["Azure Architecture", "Azure AI/ML", "Docker", "Git", "Linux"],
+      skills: [
+        {
+          name: "Azure Architecture",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Azure AI/ML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Docker",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+        },
+        {
+          name: "Git",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+        },
+        {
+          name: "Linux",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+        }
+      ],
       color: "from-indigo-500 to-purple-500"
     },
     {
       title: "AI/ML Specialties",
       icon: Settings,
-      skills: ["Deep Learning", "Computer Vision", "Time Series", "EDA", "AutoML"],
+      skills: [
+        {
+          name: "Deep Learning",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+        },
+        {
+          name: "Computer Vision",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+        },
+        {
+          name: "Time Series",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          name: "EDA",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
+        },
+        {
+          name: "AutoML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        }
+      ],
       color: "from-cyan-500 to-blue-500"
     }
   ];
