@@ -101,17 +101,9 @@ export const Skills = () => {
       color: "from-orange-500 to-red-500"
     },
     {
-      title: "Cloud & DevOps",
+      title: "DevOps/Tools",
       icon: Cloud,
       skills: [
-        {
-          name: "Azure Architecture",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-        },
-        {
-          name: "Azure AI/ML",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-        },
         {
           name: "Docker",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
@@ -123,6 +115,10 @@ export const Skills = () => {
         {
           name: "Linux",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+        },
+        {
+          name: "CI/CD Pipelines",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
         }
       ],
       color: "from-indigo-500 to-purple-500"
