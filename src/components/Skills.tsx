@@ -124,6 +124,33 @@ export const Skills = () => {
       color: "from-indigo-500 to-purple-500"
     },
     {
+      title: "Cloud Technologies",
+      icon: Cloud,
+      skills: [
+        {
+          name: "Azure Architecture",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Azure AI/ML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Cloud Deployment",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+        },
+        {
+          name: "Serverless Functions",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        },
+        {
+          name: "Managed Services",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+        }
+      ],
+      color: "from-blue-400 to-cyan-400"
+    },
+    {
       title: "AI/ML Specialties",
       icon: Settings,
       skills: [
