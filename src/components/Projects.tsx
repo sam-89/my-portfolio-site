@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, X } from 'lucide-react';
@@ -11,7 +10,7 @@ export const Projects = () => {
       title: "Scalable AI Platform",
       description: "End-to-end machine learning platform with automated model deployment and monitoring",
       tech: ["Python", "TensorFlow", "Docker", "Azure", "React"],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      image: "/images/projects/ai-platform.png",
       details: "A comprehensive AI platform that enables data scientists to build, train, and deploy machine learning models at scale. Features include automated hyperparameter tuning, model versioning, and real-time monitoring dashboards.",
       github: "#",
       demo: "#"
@@ -20,7 +19,7 @@ export const Projects = () => {
       title: "Deep Learning Model Deployment",
       description: "Containerized deep learning models with REST API interfaces for production use",
       tech: ["PyTorch", "FastAPI", "Docker", "Kubernetes"],
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+      image: "/images/projects/deep-learning.webp",
       details: "Production-ready deployment system for deep learning models with automatic scaling, load balancing, and performance monitoring. Supports both batch and real-time inference.",
       github: "#",
       demo: "#"
@@ -29,7 +28,7 @@ export const Projects = () => {
       title: "EDA Automation Suite",
       description: "Automated exploratory data analysis tool with interactive visualizations",
       tech: ["Python", "Pandas", "Plotly", "Streamlit"],
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      image: "/images/projects/eda-suite.png",
       details: "Intelligent EDA tool that automatically generates comprehensive data analysis reports including statistical summaries, correlation matrices, and interactive visualizations.",
       github: "#",
       demo: "#"
@@ -38,17 +37,26 @@ export const Projects = () => {
       title: "Stock Market Intraday AI Agent",
       description: "AI-powered trading agent for intraday stock market analysis and prediction",
       tech: ["Python", "LSTM", "Technical Analysis", "Real-time APIs"],
-      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b",
+      image: "/images/projects/stock-ai.png",
       details: "Advanced AI agent that analyzes market patterns, sentiment data, and technical indicators to provide real-time trading insights and automated decision-making capabilities.",
       github: "#",
       demo: "#"
     },
     {
-      title: "Automated Voting System",
-      description: "Secure blockchain-based voting system with biometric authentication",
-      tech: ["Blockchain", "Biometrics", "React", "Node.js"],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      details: "Tamper-proof voting system leveraging blockchain technology and biometric verification to ensure secure, transparent, and verifiable elections.",
+      title: "SaaS-Business Management",
+      description: "All-in-one business management platform with AI-powered insights",
+      tech: ["React", "Node.js", "PostgreSQL", "Docker", "Azure"],
+      image: "/images/projects/saas-platform.jpg",
+      details: "A comprehensive business management platform that helps small businesses manage operations, track performance, and make data-driven decisions. Features include inventory management, sales tracking, customer analytics, and AI-powered business insights. Built with React frontend, Node.js backend, PostgreSQL database, and deployed on Azure.",
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "Time Series Forecasting Platform",
+      description: "Advanced time series analysis and forecasting system with automated model selection",
+      tech: ["Python", "Prophet", "ARIMA", "LSTM", "Azure ML"],
+      image: "/images/projects/time-series.webp",
+      details: "Comprehensive platform for time series analysis and forecasting, featuring automated model selection, hyperparameter optimization, and real-time prediction capabilities.",
       github: "#",
       demo: "#"
     }

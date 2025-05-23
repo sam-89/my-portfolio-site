@@ -67,7 +67,7 @@ export const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"
           >
-            SKP
+            SP
           </motion.div>
 
           {/* Desktop Navigation */}

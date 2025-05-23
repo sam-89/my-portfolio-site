@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, ExternalLink } from 'lucide-react';
 
@@ -32,10 +31,8 @@ export const Hero = () => {
                 transition: { duration: 0.3 } 
               }}
             >
-              AI Engineer
+              AI Engineer by Mind
             </motion.span>
-            <br />
-            <span className="text-white">by Mind</span>
             <br />
             <motion.span 
               className="bg-gradient-to-r from-purple-400 via-pink-300 to-blue-400 bg-clip-text text-transparent"
@@ -44,10 +41,8 @@ export const Hero = () => {
                 transition: { duration: 0.3 } 
               }}
             >
-              Technologist
+              Technologist by Passion
             </motion.span>
-            <br />
-            <span className="text-white">by Passion</span>
           </motion.h1>
 
           <motion.p

@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
 
@@ -62,85 +61,204 @@ export const Experience = () => {
     <section id="experience" className="py-20 relative">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 30, scale: 0.8 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ 
+            duration: 0.8,
+            ease: "easeOut",
+            scale: {
+              type: "spring",
+              stiffness: 100,
+              damping: 10
+            }
+          }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-300 bg-clip-text text-transparent">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              delay: 0.2,
+              duration: 0.6,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true }}
+            className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-300 bg-clip-text text-transparent"
+          >
             Professional Journey
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              delay: 0.4,
+              duration: 0.6,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true }}
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
+          >
             Over a decade of experience in AI/ML and full-stack development
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden lg:block" />
+          <motion.div
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden lg:block"
+          />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                className={`relative flex ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  delay: index * 0.2,
+                  duration: 0.8,
+                  ease: "easeOut"
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="relative flex flex-col lg:flex-row items-start lg:items-center"
               >
-                {/* Timeline dot */}
-                <div className="absolute left-8 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900 hidden lg:block" />
+                {/* Timeline dot and connector */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ 
+                    delay: index * 0.2 + 0.3,
+                    duration: 0.5,
+                    ease: "easeOut"
+                  }}
+                  viewport={{ once: true }}
+                  className="absolute left-8 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-slate-900 hidden lg:block"
+                />
+                <motion.div
+                  initial={{ height: 0 }}
+                  whileInView={{ height: "100%" }}
+                  transition={{ 
+                    delay: index * 0.2 + 0.4,
+                    duration: 0.8,
+                    ease: "easeInOut"
+                  }}
+                  viewport={{ once: true }}
+                  className="absolute left-8 top-4 bottom-4 w-px bg-gradient-to-b from-blue-500 to-purple-500 hidden lg:block"
+                />
 
-                <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-16' : 'lg:pl-16'}`}>
+                {/* Date badge */}
+                <div className="lg:w-1/4 mb-4 lg:mb-0 lg:pr-8">
                   <motion.div
-                    whileHover={{ scale: 1.02, y: -5 }}
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-lg p-3 border border-blue-500/20"
+                  >
+                    <p className="text-blue-400 font-medium text-center">{exp.period}</p>
+                  </motion.div>
+                </div>
+
+                {/* Content */}
+                <div className="lg:w-3/4">
+                  <motion.div
+                    whileHover={{ 
+                      scale: 1.02, 
+                      y: -5,
+                      boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.3)"
+                    }}
+                    transition={{ duration: 0.3 }}
                     className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
                   >
                     <div className="flex items-start justify-between mb-4">
-                      <div>
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.2 + 0.5 }}
+                        viewport={{ once: true }}
+                      >
                         <h3 className="text-xl font-semibold text-white mb-1">{exp.title}</h3>
                         <p className="text-blue-400 font-medium">{exp.company}</p>
-                      </div>
-                      <div className="bg-blue-500/20 p-2 rounded-lg">
+                      </motion.div>
+                      <motion.div
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                        className="bg-blue-500/20 p-2 rounded-lg"
+                      >
                         <Briefcase className="text-blue-400" size={20} />
-                      </div>
+                      </motion.div>
                     </div>
 
-                    <div className="flex items-center space-x-4 text-gray-400 text-sm mb-4">
-                      <div className="flex items-center space-x-1">
-                        <Calendar size={16} />
-                        <span>{exp.period}</span>
-                      </div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.2 + 0.6 }}
+                      viewport={{ once: true }}
+                      className="flex items-center space-x-4 text-gray-400 text-sm mb-4"
+                    >
                       <div className="flex items-center space-x-1">
                         <MapPin size={16} />
                         <span>{exp.location}</span>
                       </div>
-                    </div>
+                    </motion.div>
 
-                    <p className="text-gray-300 mb-4">{exp.description}</p>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: index * 0.2 + 0.7 }}
+                      viewport={{ once: true }}
+                      className="text-gray-300 mb-4"
+                    >
+                      {exp.description}
+                    </motion.p>
 
                     <div className="mb-4">
                       <h4 className="text-white font-medium mb-2">Key Achievements:</h4>
-                      <ul className="space-y-1">
+                      <ul className="space-y-2">
                         {exp.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex} className="text-gray-300 text-sm flex items-start space-x-2">
-                            <div className="w-1 h-1 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
+                          <motion.li
+                            key={achIndex}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ 
+                              delay: index * 0.2 + 0.8 + achIndex * 0.1,
+                              duration: 0.5
+                            }}
+                            viewport={{ once: true }}
+                            className="text-gray-300 text-sm flex items-start space-x-2"
+                          >
+                            <motion.div
+                              whileHover={{ scale: 1.5 }}
+                              className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mt-2 flex-shrink-0"
+                            />
                             <span>{achievement}</span>
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, techIndex) => (
-                        <span
+                        <motion.span
                           key={techIndex}
-                          className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-md"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          whileHover={{ 
+                            scale: 1.1,
+                            backgroundColor: "rgba(139, 92, 246, 0.3)"
+                          }}
+                          transition={{ 
+                            delay: index * 0.2 + 1 + techIndex * 0.1,
+                            duration: 0.3
+                          }}
+                          viewport={{ once: true }}
+                          className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-md cursor-default"
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
                   </motion.div>

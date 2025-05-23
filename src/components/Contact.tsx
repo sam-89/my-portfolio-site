@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
@@ -55,19 +54,29 @@ export const Contact = () => {
       icon: Github,
       label: "GitHub",
       href: "#",
-      color: "hover:text-gray-400"
+      color: "text-gray-400 hover:text-white",
+      bgColor: "bg-gray-800/50 hover:bg-gray-700/50"
     },
     {
       icon: Linkedin,
       label: "LinkedIn", 
       href: "#",
-      color: "hover:text-blue-400"
+      color: "text-blue-400 hover:text-blue-300",
+      bgColor: "bg-blue-500/20 hover:bg-blue-500/30"
     },
     {
-      icon: ExternalLink,
-      label: "Portfolio",
-      href: "https://sumantakumarpatel.com",
-      color: "hover:text-green-400"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg",
+      label: "Kaggle",
+      href: "#",
+      color: "text-[#20BEFF] hover:text-[#20BEFF]/80",
+      bgColor: "bg-[#20BEFF]/20 hover:bg-[#20BEFF]/30"
+    },
+    {
+      icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzJFQzg2NiI+PHBhdGggZD0iTTEyIDI0YzYuNjI3IDAgMTItNS4zNzMgMTItMTJTMTguNjI3IDAgMTIgMCAwIDUuMzczIDAgMTJzNS4zNzMgMTIgMTIgMTJ6bTAtMi4yMjJjLTUuNDA3IDAtOS43NzgtNC4zNzEtOS43NzgtOS43NzhTNi41OTMgMi4yMjIgMTIgMi4yMjJzOS43NzggNC4zNzEgOS43NzggOS43NzgtNC4zNzEgOS43NzgtOS43NzggOS43Nzh6bTQuNjY3LTYuMDU2Yy4yMjItLjU1Ni4zMzMtMS4xMTEuMzMzLTEuNjY3IDAtMi4yMjItMS43NzgtNC00LTRzLTQgMS43NzgtNCA0IDEuNzc4IDQgNCA0YzEuMTExIDAgMi4xMTEtLjQ0NCAyLjg4OS0xLjE2N2wuNTU2LjU1NmMtLjg4OS44ODktMi4wNDQgMS4zMzMtMy4yMjIgMS4zMzMtMi42NjcgMC00LjgzMy0yLjE2Ny00LjgzMy00LjgzM3MyLjE2Ny00LjgzMyA0LjgzMy00LjgzMyA0LjgzMyAyLjE2NyA0LjgzMyA0LjgzM2MwIDEuMTc4LS40NDQgMi4zMzMtMS4zMzMgMy4yMjJsLS41NTYtLjU1NnptLTUuMzMzLTIuMjIyYy0uNjExIDAtMS4xMTEtLjUtMS4xMTEtMS4xMTFzLjUtMS4xMTEgMS4xMTEtMS4xMTEgMS4xMTEuNSAxLjExMSAxLjExMS0uNSAxLjExMS0xLjExMSAxLjExMXoiLz48L3N2Zz4=",
+      label: "HackerEarth",
+      href: "#",
+      color: "text-[#2EC866] hover:text-[#2EC866]/80",
+      bgColor: "bg-[#2EC866]/20 hover:bg-[#2EC866]/30"
     }
   ];
 
@@ -144,9 +153,13 @@ export const Contact = () => {
                     transition={{ delay: index * 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className={`p-3 bg-slate-800/50 backdrop-blur-sm rounded-lg border border-gray-700/50 hover:border-blue-500/50 text-gray-400 ${social.color} transition-all`}
+                    className={`p-3 ${social.bgColor} backdrop-blur-sm rounded-lg border border-gray-700/50 hover:border-blue-500/50 ${social.color} transition-all`}
                   >
-                    <social.icon size={24} />
+                    {typeof social.icon === 'string' ? (
+                      <img src={social.icon} alt={social.label} className="w-6 h-6" />
+                    ) : (
+                      <social.icon size={24} />
+                    )}
                   </motion.a>
                 ))}
               </div>

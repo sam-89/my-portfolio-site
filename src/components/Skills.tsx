@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Code, Database, Cloud, Brain, Laptop, Settings } from 'lucide-react';
 
@@ -117,8 +116,8 @@ export const Skills = () => {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
         },
         {
-          name: "CI/CD Pipelines",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+          name: "GitHub Actions - CI/CD",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
         }
       ],
       color: "from-indigo-500 to-purple-500"
@@ -151,16 +150,12 @@ export const Skills = () => {
       color: "from-cyan-500 to-blue-500"
     },
     {
-      title: "Cloud Technologies & DevOps",
+      title: "Cloud Technologies",
       icon: Cloud,
       skills: [
         {
           name: "Azure Architecture",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-        },
-        {
-          name: "Cloud Deployment",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
         },
         {
           name: "Serverless Functions",
@@ -171,16 +166,8 @@ export const Skills = () => {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
         },
         {
-          name: "Managed Services",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
-        },
-        {
           name: "Cloud Storage",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-        },
-        {
-          name: "CI/CD Pipelines",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
         },
         {
           name: "Infrastructure as Code",
@@ -222,7 +209,9 @@ export const Skills = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
+              className={`bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 ${
+                index === skillCategories.length - 1 ? 'md:col-span-2 lg:col-span-3' : ''
+              }`}
             >
               <div className="flex items-center space-x-4 mb-6">
                 <div className={`bg-gradient-to-r ${category.color} p-3 rounded-lg`}>
@@ -231,7 +220,9 @@ export const Skills = () => {
                 <h3 className="text-xl font-semibold text-white">{category.title}</h3>
               </div>
 
-              <div className="space-y-3">
+              <div className={`space-y-3 ${
+                index === skillCategories.length - 1 ? 'grid md:grid-cols-2 lg:grid-cols-3 gap-4' : ''
+              }`}>
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
