@@ -1,73 +1,94 @@
 # My Portfolio Site
 
-## Project info
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This portfolio showcases my work as an AI Engineer and Technologist, featuring smooth animations, interactive components, and a clean design.
 
-**URL**: https://lovable.dev/projects/2ab2bed6-8a90-44a8-9171-ff2151a9512f
+## 🚀 Features
 
-## How can I edit this code?
+- ✨ Modern and responsive design
+- 🎨 Beautiful UI with Tailwind CSS and shadcn/ui
+- 🎭 Smooth animations with Framer Motion
+- 📱 Mobile-first approach
+- 🌙 Dark mode support
+- 🎯 Interactive components
+- 🚀 Fast performance with Vite
+- 📝 TypeScript for better development experience
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- [React](https://reactjs.org/) - UI Library
+- [TypeScript](https://www.typescriptlang.org/) - Type Safety
+- [Vite](https://vitejs.dev/) - Build Tool
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [shadcn/ui](https://ui.shadcn.com/) - UI Components
+- [Framer Motion](https://www.framer.com/motion/) - Animations
+- [React Router](https://reactrouter.com/) - Routing
+- [React Query](https://tanstack.com/query/latest) - Data Fetching
+- [Three.js](https://threejs.org/) - 3D Graphics
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2ab2bed6-8a90-44a8-9171-ff2151a9512f) and start prompting.
+## 🏁 Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v16 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the repository
+```bash
+git clone https://github.com/sam-89/my-portfolio-site.git
+cd my-portfolio-site
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-**Use GitHub Codespaces**
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📦 Available Scripts
 
-## What technologies are used for this project?
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-This project is built with:
+## 🎨 Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+my-portfolio-site/
+├── public/          # Static assets
+│   ├── components/  # React components
+│   ├── styles/      # Global styles
+│   └── App.tsx      # Root component
+├── index.html       # Entry HTML
+└── package.json     # Dependencies and scripts
+```
 
-## How can I deploy this project?
+## 🤝 Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/2ab2bed6-8a90-44a8-9171-ff2151a9512f) and click on Share -> Publish.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/sam-89/my-portfolio-site/issues).
 
-## Can I connect a custom domain to my Lovable project?
+## 📝 License
 
-Yes, you can!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 👨‍💻 Author
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Sumanta Kumar Patel**
+- GitHub: [@sam-89](https://github.com/sam-89)
+- Portfolio: [https://www.sumantakumarpatel.com]
+
+---
+
+⭐️ If you like this project, please give it a star on GitHub!
