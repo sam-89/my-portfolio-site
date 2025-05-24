@@ -5,9 +5,9 @@ export const Experience = () => {
   const experiences = [
     {
       title: "Senior AI/ML Engineer",
-      company: "Tech Innovation Corp",
+      company: "Optum (UnitedHealth Group)",
       period: "2022 - Present",
-      location: "Remote",
+      location: "Hyderabad, India",
       description: "Leading AI/ML initiatives, developing scalable machine learning pipelines, and mentoring junior engineers in deep learning technologies.",
       technologies: ["Python", "TensorFlow", "Azure ML", "Docker", "Kubernetes"],
       achievements: [
@@ -17,41 +17,45 @@ export const Experience = () => {
       ]
     },
     {
-      title: "Full Stack Developer & Data Scientist",
+      title: "Lead SDET",
       company: "Optum (UnitedHealth Group)",
       period: "2018 - 2022",
       location: "Gurgaon, India",
-      description: "Developed end-to-end healthcare analytics solutions, built predictive models for patient outcomes, and created interactive dashboards.",
-      technologies: ["Python", "React", "Django", "PostgreSQL", "AWS"],
+      description: "Developed end-to-end automated testing framework for various frontend and PEGA applications, and various interactive Dashboards.",
+      technologies: ["Python", "Java", "Selenium", "React", "Django", "PostgreSQL"],
       achievements: [
-        "Built predictive models improving patient care efficiency by 25%",
-        "Developed real-time analytics dashboard used by 500+ healthcare professionals",
+        "Built Test Automation Frameworks from Scratch",
+        "Built Performance Test Automation Suit",
+        "Analysis of Performance matrix to predict infrastructure.",
+        "ETL for PHI and PII related data",
         "Received Transformation Champion award for innovative solutions"
       ]
     },
     {
-      title: "Software Engineer",
-      company: "Digital Solutions Ltd",
+      title: "Application Developer",
+      company: "Optum (UnitedHealth Group)",
       period: "2015 - 2018",
-      location: "Bangalore, India",
-      description: "Developed web applications, implemented data processing pipelines, and contributed to machine learning research projects.",
-      technologies: ["Java", "JavaScript", "Python", "MySQL", "Hadoop"],
+      location: "Gurugram, India",
+      description: "TOPS (The Online Processing System) - This project involved Building and Maintaining IBM Mainframe Program for claim processing engine provided by RMOs and other submitters which contains Medical and Rx claims processing, RTA claims processing through CHWY TOPS, NDB, CDB, PE and many more downstream applications.",
+      technologies: ["COBOL", "JCL", "DB2", "MySQL", "Java", "Python"],
       achievements: [
-        "Optimized data processing pipelines reducing execution time by 40%",
-        "Contributed to 3 published research papers in ML conferences",
-        "Mentored 10+ junior developers in best coding practices"
+        "Optimized data processing pipelines reducing execution time",
+        "Mentored 10+ junior developers in best coding practices",
+        "Reduced claim processing time by 5% by optimizing BOBOL and Query optimization",
+        "Automated reporting for Batch Processing and Reconciliation"
       ]
     },
     {
-      title: "Junior Developer",
-      company: "StartUp Innovations",
+      title: "Assc. Application Developer",
+      company: "United Health Group",
       period: "2014 - 2015",
-      location: "Delhi, India",
-      description: "Started career developing web applications and learning machine learning fundamentals in a fast-paced startup environment.",
-      technologies: ["PHP", "JavaScript", "MySQL", "Python"],
+      location: "Gurugram, India",
+      description: "Started career developing COBOL, JCL, CICS, DB2 applications. Worked on various projects like Claim Processing, Claim Reconciliation, Claim Status Inquiry, etc.",
+      technologies: ["COBOL", "JCL", "CICS", "DB2"],
       achievements: [
-        "Developed MVP for 2 successful product launches",
-        "Reduced application load time by 50% through optimization",
+        "TOPS FE - The Front End of TOPS project involved overall orchestration of system.", 
+        "Managing data movement from CHWY to TOPS system. Handing the reconciliation process with downstream applications.",
+        "Worked on various projects like Claim Processing, Claim Reconciliation, Claim Status Inquiry, etc.",
         "Quickly adapted to new technologies and frameworks"
       ]
     }
