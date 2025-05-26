@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "outDir": "../dist/api",
+    "isolatedModules": true,
+    "noEmit": false,
+    "esModuleInterop": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}

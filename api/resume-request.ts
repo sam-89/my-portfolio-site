@@ -1,4 +1,4 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import nodemailer from 'nodemailer';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -13,6 +13,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!name || !email || !company) {
       return res.status(400).json({ message: 'Missing required fields' });
     }
+
+    console.log('Processing resume download request:', { name, email, company });
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -35,7 +37,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Company:</strong> ${company}</p>
-        <p><strong>Position:</strong> ${position}</p>
+        <p><strong>Position:</strong> ${position || 'Not specified'}</p>
       `,
     };
 
@@ -61,9 +63,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       transporter.sendMail(downloaderEmail),
     ]);
 
+    console.log('Emails sent successfully');
     return res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Error sending email:', error);
-    return res.status(500).json({ message: 'Failed to send email' });
+    return res.status(500).json({ 
+      message: 'Failed to send email',
+      error: error instanceof Error ? error.message : String(error)
+    });
   }
-} 
+}
