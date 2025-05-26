@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Download, FileText, FileCheck } from 'lucide-react';
 
@@ -42,8 +41,8 @@ export const Resume = () => {
               </div>
               
               <motion.a
-                href="#"
-                download
+                href="/resume.pdf"
+                download="Sumanta_Kumar_Patel_Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 rounded-lg text-white shadow-lg shadow-indigo-500/25 transition-colors"

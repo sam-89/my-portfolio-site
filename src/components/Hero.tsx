@@ -77,6 +77,14 @@ export const Hero = () => {
                 borderColor: "rgb(168, 85, 247)" 
               }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'Sumanta_Kumar_Patel_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               className="px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-semibold text-white flex items-center space-x-2"
             >
               <span>Download Resume</span>
