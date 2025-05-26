@@ -24,14 +24,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Get nodemailer and create transporter
     const nodemailer = await getNodemailer();
+    
+    // Log email configuration for debugging (excluding password)
+    console.log('Email configuration:', {
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: process.env.SMTP_SECURE === 'false' ? false : true,
+    });
+    
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: true,
+      secure: process.env.SMTP_SECURE === 'false' ? false : true, // true for 465, false for other ports
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
       },
+      tls: {
+        // Do not fail on invalid certs
+        rejectUnauthorized: false
+      }
     });
 
     // Email to the portfolio owner
