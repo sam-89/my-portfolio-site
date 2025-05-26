@@ -1,6 +1,12 @@
+// Using import type to avoid runtime imports
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import nodemailer from 'nodemailer';
 
+// Using dynamic import for nodemailer to avoid ES module issues
+const getNodemailer = async () => {
+  return await import('nodemailer').then(module => module.default || module);
+};
+
+// Handler function
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
@@ -16,7 +22,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     console.log('Processing resume download request:', { name, email, company });
 
-    // Create transporter
+    // Get nodemailer and create transporter
+    const nodemailer = await getNodemailer();
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
