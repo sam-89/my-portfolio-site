@@ -1,12 +1,33 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { ResumeDownloadModal } from './ResumeDownloadModal';
+import { sendDownloaderInfo } from '../lib/emailService';
 
 export const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const scrollToAbout = () => {
     const element = document.querySelector('#about');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleDownload = async (data: any) => {
+    // Send email notification
+    await sendDownloaderInfo(data);
+    
+    // Download the resume
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Sumanta_Kumar_Patel_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Close the modal
+    setIsModalOpen(false);
   };
 
   return (
@@ -77,14 +98,7 @@ export const Hero = () => {
                 borderColor: "rgb(168, 85, 247)" 
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.download = 'Sumanta_Kumar_Patel_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+              onClick={() => setIsModalOpen(true)}
               className="px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-semibold text-white flex items-center space-x-2"
             >
               <span>Download Resume</span>
@@ -117,6 +131,12 @@ export const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      <ResumeDownloadModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onDownload={handleDownload}
+      />
     </section>
   );
 };

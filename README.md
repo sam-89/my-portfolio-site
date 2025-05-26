@@ -12,6 +12,8 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - 🎯 Interactive components
 - 🚀 Fast performance with Vite
 - 📝 TypeScript for better development experience
+- 📧 Email notifications for resume downloads
+- 🔒 Secure API endpoints with Vercel serverless functions
 
 ## 🛠️ Tech Stack
 
@@ -24,6 +26,8 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - [React Router](https://reactrouter.com/) - Routing
 - [React Query](https://tanstack.com/query/latest) - Data Fetching
 - [Three.js](https://threejs.org/) - 3D Graphics
+- [Vercel](https://vercel.com/) - Deployment & Serverless Functions
+- [Nodemailer](https://nodemailer.com/) - Email Notifications
 
 ## 🏁 Getting Started
 
@@ -31,6 +35,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 - Node.js (v16 or higher)
 - npm or yarn
+- Vercel CLI (`npm i -g vercel`)
 
 ### Installation
 
@@ -43,22 +48,39 @@ cd my-portfolio-site
 2. Install dependencies
 ```bash
 npm install
-# or
-yarn install
 ```
 
-3. Start the development server
+3. Set up environment variables
+Create a `.env` file in the root directory with:
 ```bash
-npm run dev
-# or
-yarn dev
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-specific-password
 ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser
+4. Start the development servers
+
+   **To run with the resume download functionality:**
+   ```bash
+   # Terminal 1: Start the local API server for resume download functionality
+   node local-server.js
+   
+   # Terminal 2: Start the frontend application
+   npm run dev:vite
+   ```
+
+   **Alternative (without resume download form functionality):**
+   ```bash
+   # For frontend-only development (resume download will not work)
+   npm run dev:vite
+   ```
+
+5. Open [http://localhost:8080](http://localhost:8080) in your browser
 
 ## 📦 Available Scripts
 
-- `npm run dev` - Start development server
+- `node local-server.js` - Start the local API server for resume download functionality
+- `npm run dev:vite` - Start the Vite development server (frontend only)
+- `npm run dev` - Start Vercel development server (may have issues with local resume download functionality)
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
@@ -67,13 +89,28 @@ yarn dev
 
 ```
 my-portfolio-site/
-├── public/          # Static assets
-│   ├── components/  # React components
-│   ├── styles/      # Global styles
-│   └── App.tsx      # Root component
-├── index.html       # Entry HTML
-└── package.json     # Dependencies and scripts
+├── api/            # Vercel serverless functions
+│   └── resume-request.ts
+├── public/         # Static assets
+├── src/           # Source files
+│   ├── components/ # React components
+│   ├── lib/       # Utility functions
+│   └── App.tsx    # Root component
+├── index.html     # Entry HTML
+└── package.json   # Dependencies and scripts
 ```
+
+## 🔧 Environment Variables
+
+The following environment variables are required:
+
+- `EMAIL_USER`: Your Gmail address
+- `EMAIL_PASS`: Your Gmail app-specific password
+
+To set up Gmail:
+1. Enable 2-factor authentication
+2. Generate an app-specific password
+3. Use this password as `EMAIL_PASS`
 
 ## 🤝 Contributing
 

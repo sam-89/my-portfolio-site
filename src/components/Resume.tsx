@@ -1,7 +1,35 @@
 import { motion } from 'framer-motion';
 import { Download, FileText, FileCheck } from 'lucide-react';
+import { useState } from 'react';
+import { ResumeDownloadModal } from './ResumeDownloadModal';
+import { sendDownloaderInfo } from '../lib/emailService';
+
+interface DownloaderInfo {
+  name: string;
+  organization: string;
+  phone: string;
+  email: string;
+}
 
 export const Resume = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleDownload = async (data: DownloaderInfo) => {
+    // Send email notification
+    await sendDownloaderInfo(data);
+    
+    // Download the resume
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Sumanta_Kumar_Patel_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Close the modal
+    setIsModalOpen(false);
+  };
+
   return (
     <section id="resume" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -40,16 +68,15 @@ export const Resume = () => {
                 </div>
               </div>
               
-              <motion.a
-                href="/resume.pdf"
-                download="Sumanta_Kumar_Patel_Resume.pdf"
+              <motion.button
+                onClick={() => setIsModalOpen(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 rounded-lg text-white shadow-lg shadow-indigo-500/25 transition-colors"
               >
                 <Download size={20} />
                 <span>Download</span>
-              </motion.a>
+              </motion.button>
             </div>
             
             <div className="mt-8 space-y-4">
@@ -80,6 +107,13 @@ export const Resume = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Modal for resume download verification */}
+      <ResumeDownloadModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onDownload={handleDownload}
+      />
     </section>
   );
 };
